@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4 mb-4">
+  <h2 class="mb-3">Enter Your Medical Details</h2>
+  <form method="POST" action="{{ url_for('main.predict') }}">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Age</label>
+        <input type="number" name="Age" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Gender of the patient</label>
+        <select name="Gender" class="form-select" required> <!-- Corrected here -->
+          <option value="0">Female</option>
+          <option value="1">Male</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Total Bilirubin</label>
+        <input type="number" name="Total Bilirubin" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Direct Bilirubin</label>
+        <input type="number" name="Direct Bilirubin" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Alkaline Phosphatase</label>
+        <input type="number" name="Alkaline Phosphatase" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Alamine Aminotransferase</label>
+        <input type="number" name="Alamine Aminotransferase" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Aspartate Aminotransferase</label>
+        <input type="number" name="Aspartate Aminotransferase" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Total Protiens</label>
+        <input type="number" name="Total Protiens" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Albumin</label>
+        <input type="number" name="Albumin" class="form-control" step="any" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Albumin and Globulin Ratio</label>
+        <input type="number" name="Albumin and Globulin Ratio" class="form-control" step="any" required>
+      </div>
+    </div>
+    <div class="mt-4 text-center">
+      <button type="submit" class="btn btn-success">Predict Risk</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
